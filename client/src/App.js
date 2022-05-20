@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Project 
+            id="_g9ert45"
             name="Google Clone" 
             category="Web Development" 
             state="Completed" 
@@ -14,7 +15,7 @@ function App() {
             numTaskDone={25}
             numTask={50}
             tags={["Fullstack", "MERN"]}
-            dueDate="20 June"
+            dueDate="10 july"
             />
       </header>
     </div>

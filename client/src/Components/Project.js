@@ -18,6 +18,7 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
 import { pink } from '@mui/material/colors';
 import LinearProgress from '@mui/material/LinearProgress';
+import AvatarGroup from '@mui/material/AvatarGroup';
 
 /* Style subcomponent of Card */
 const useStyles = makeStyles({
@@ -49,15 +50,16 @@ const useStyles = makeStyles({
         },
     },
     IconButton: {
-        maxHeight: '35px',
-        maxWidth: '35px', 
+        maxHeight: '30px',
+        maxWidth: '30px',
     },
     tags: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'start',
+        marginBottom: 10,
         "& Button": {
-            fontSize: '10px',
+            fontSize: '12px',
             padding: '5px 10px',
             margin: '0 5px'
         },
@@ -69,16 +71,36 @@ const useStyles = makeStyles({
             color: '#ffb303',
             background: "rgba(255, 230, 3, 0.3)"
         },
+    },
+    dueDate: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'start',
+        margin: '0 5px',
+        "& Button": {
+            fontSize: '12px',
+            color: '#ed6c02',
+            background: "rgba(255, 152, 0, 0.2)",
+            padding: '5px 23px'
+        },
 
-    }
-
+    }, 
+    participants: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'start',
+        margin: '10px 0',
+    },
 })
 
 
-function Project({ name, category, state, priority, numTaskDone, numTask, tags, dueDate }) {
+function Project({ id, name, category, state, priority, numTaskDone, numTask, tags, dueDate }) {
     
     const classes = useStyles();
-    const [participants, setParticipants] = useState([])
+    const [participants, setParticipants] = useState(["Aliyah Esparza",
+                                                    "Felicity Colson",
+                                                    "Zayne Tully",
+                                                    "Ashley Newkirk"])
     
     return (
         <Card elevation={0}
@@ -112,15 +134,16 @@ function Project({ name, category, state, priority, numTaskDone, numTask, tags, 
                             aria-label="add to favorites"
                             sx={{ 
                                 border: 1,
-                                borderColor: 'grey.400'    
+                                padding: '10px',
+                                borderColor: 'grey.300'    
                              }}>
                             <FavoriteIcon 
                                 fontSize='small'
                                 sx={{ color: pink[500] }}
                             />
                         </IconButton>
-                        <IconButton aria-label="settings" className={classes.IconButton}>
-                            <MoreVertIcon fontSize='small'/>
+                        <IconButton id="settingIconButton" aria-label="settings" className={classes.IconButton}>
+                            <MoreVertIcon fontSize='large'/>
                         </IconButton>
                     </CardActions>
                 }
@@ -137,7 +160,7 @@ function Project({ name, category, state, priority, numTaskDone, numTask, tags, 
                         <b>{state}</b>
                     </Button>
                     <Button variant="outlined" color='warning' size='small' className={classes.disabled}>
-                        {priority + " priority"}
+                        {priority + ' priority'}
                     </Button>
                 </div>
                 <div className={classes.numTaskInfo}>
@@ -152,9 +175,15 @@ function Project({ name, category, state, priority, numTaskDone, numTask, tags, 
                         <b>{tags[1]}</b>
                     </Button>
                 </div>
+                <AvatarGroup className={classes.participants} total={participants.length} max={5}>
+                    <Avatar sx={{ width: 35, height: 35 }} alt="Remy Sharp" src="https://static01.nyt.com/newsgraphics/2020/11/12/fake-people/4b806cf591a8a76adfc88d19e90c8c634345bf3d/fallbacks/mobile-03.jpg" />
+                    <Avatar sx={{ width: 35, height: 35 }} alt="Travis Howard" src="https://i.guim.co.uk/img/media/75bd4161378dd43913815ce76caab186a9d5d287/0_10_6720_4032/master/6720.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=41cbc8935ae4e0f498227fa8b10953d0" />
+                    <Avatar sx={{ width: 35, height: 35 }} alt="Agnes Walker" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqg5slcNRbgeCQcoXxM6vMRMI8DO8AYJ0B0baniZp0YtWZwMbh-4VQ3maIVRbcRQWrmfk&usqp=CAU" />
+                    <Avatar sx={{ width: 35, height: 35 }} alt="Trevor Henderson" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk476ZNUZX6SiiowmLN7K5XdsPfjh65Gt50j12c8o7xbdaS4KIhPukruxv7i4EdhX_is&usqp=CAU" />
+                </AvatarGroup>
                 <div className={classes.dueDate}>
                     <Button variant="text" size='small' className={classes.disabled}>
-                        {"DUE DATE: " + dueDate}
+                        <b>{"DUE DATE: " + dueDate}</b>
                     </Button>
                 </div>
             </CardContent>
