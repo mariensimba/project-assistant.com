@@ -1,4 +1,7 @@
 import React from "react"
+import Palette from "../style/Palette"
+
+const palette = new Palette()
 
 function ProgressBar({ bgcolor, progress, height }) {
 
@@ -9,7 +12,7 @@ function ProgressBar({ bgcolor, progress, height }) {
     const Parentdiv = {
         height: height,
         width: '100%',
-        backgroundColor: 'whitesmoke',
+        backgroundColor: palette.WhiteSmoke.color,
         borderRadius: 40,
     }
       

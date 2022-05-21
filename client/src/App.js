@@ -17,6 +17,18 @@ function App() {
             tags={["Fullstack", "MERN"]}
             dueDate="10 july"
             />
+            <Project 
+              id="_g9ert45"
+              name="Ephesians 4:11-14" 
+              category="Bible Study" 
+              state="Pending" 
+              priority="Low" 
+              numTaskDone={2}
+              numTask={10}
+              tags={["Meditation", "MERN"]}
+              dueDate="Today"
+            />
+
       </header>
     </div>
   );
