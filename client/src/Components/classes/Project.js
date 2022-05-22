@@ -48,13 +48,6 @@ const useStyles = makeStyles({
         alignItems: 'center',
         justifyContent: 'start',
         margin: '0 5px',
-        "& Button": {
-            fontSize: '12px',
-            color: palette.Orange.color,
-            background: palette.Orange.addAlpha(0.2),
-            padding: '5px 23px'
-        },
-
     }, 
     participants: {
         display: 'flex',

@@ -16,6 +16,8 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import Palette from '../style/Palette';
 import Etiquette from '../style/Etiquette'
 import State from './State';
+import Priority from './Priority';
+import DueDate from './DueDate';
 
 const palette = new Palette()
 
@@ -90,7 +92,7 @@ function Project({ id, name, category, state, priority, numTaskDone, numTask, ta
             <CardContent>
                 <div    className = {classes.buttonGroup}>
                     <State value={state}/>
-                    <Etiquette value={ priority + ' priority' } variant='outlined' color={ palette.Orange.color } />
+                    <Priority value={priority} />
                 </div>
                 <div         className = {classes.numTaskInfo}>
                     <Typography  id        = 'taskDoneText' fontSize = {15} fontWeight                       = {100} textAlign = "left">Task Done: <b>{numTaskDone}</b>/{numTask}</Typography>
@@ -111,9 +113,7 @@ function Project({ id, name, category, state, priority, numTaskDone, numTask, ta
                     <Avatar      sx        = {{ width: 35, height: 35 }} alt = "Trevor Henderson" src    = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk476ZNUZX6SiiowmLN7K5XdsPfjh65Gt50j12c8o7xbdaS4KIhPukruxv7i4EdhX_is&usqp=CAU" />
                 </AvatarGroup>
                 <div    className = {classes.dueDate}>
-                <Button variant   = "text" size = 'small'>
-                        <b>{"DUE DATE: " + dueDate}</b>
-                </Button>
+                    <DueDate date={dueDate}/>
                 </div>
             </CardContent>
         </Card>

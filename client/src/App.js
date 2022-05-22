@@ -10,7 +10,7 @@ function App() {
           name="Google Clone" 
           category="Web Development" 
           state="Completed" 
-          priority="High" 
+          priority="Mid" 
           numTaskDone={25}
           numTask={50}
           tags={["Fullstack", "MERN"]}
@@ -21,7 +21,7 @@ function App() {
           name="Ephesians 4:11-14" 
           category="Bible Study" 
           state="In Progress" 
-          priority="Low" 
+          priority="High" 
           numTaskDone={2}
           numTask={10}
           tags={["Meditation", "Ministry"]}
