@@ -18,7 +18,7 @@ export default function Etiquette({variant = 'text', color, bgcolor = 'transpare
 
     function getFontStyle() {
         if (fontStyle === 'bold') {
-            return <b>{value}</b>
+            return <b>{ value }</b>
         }
         if (fontStyle === 'italic'){
             return <i>{value}</i>
