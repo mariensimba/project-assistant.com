@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useStyles from './css/Project';
+import useStyles from './classes/Project';
 import ProgressBar from './ProgressBar';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -12,9 +12,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
-import { pink } from '@mui/material/colors';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Palette from '../style/Palette';
+import Etiquette from '../style/Etiquette'
+import State from './State';
 
 const palette = new Palette()
 
@@ -88,22 +89,18 @@ function Project({ id, name, category, state, priority, numTaskDone, numTask, ta
             />
             <CardContent>
                 <div    className = {classes.buttonGroup}>
-                    <Button variant   = "text" size = 'small' id = "stateButton" className = {classes.disabled}>
-                        <b>{state}</b>
-                    </Button>
-                    <Button variant = "outlined" id = "priorityButton" size = 'small' className = {classes.disabled}>
-                        {priority + ' priority'}
-                    </Button>
+                    <State value={state}/>
+                    <Etiquette value={ priority + ' priority' } variant='outlined' color={ palette.Orange.color } />
                 </div>
                 <div         className = {classes.numTaskInfo}>
                     <Typography  id        = 'taskDoneText' fontSize = {15} fontWeight                       = {100} textAlign = "left">Task Done: <b>{numTaskDone}</b>/{numTask}</Typography>
                     <ProgressBar bgcolor   = { palette.DarkBlue.color } progress      = {numTaskDone * (100/numTask)}  height = {7} />
                 </div>
                 <div    className = {classes.tags}>
-                    <Button variant   = "text" size = 'small' id = "tagButton1" className = {classes.disabled}>
+                    <Button variant   = "text" size = 'small' id = "tagButton1">
                         <b>{tags[0]}</b>
                     </Button>
-                    <Button variant = "text" size = 'small' id = "tagButton2" className = {classes.disabled}>
+                    <Button variant = "text" size = 'small' id = "tagButton2">
                         <b>{tags[1]}</b>
                     </Button>
                 </div>
@@ -114,7 +111,7 @@ function Project({ id, name, category, state, priority, numTaskDone, numTask, ta
                     <Avatar      sx        = {{ width: 35, height: 35 }} alt = "Trevor Henderson" src    = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk476ZNUZX6SiiowmLN7K5XdsPfjh65Gt50j12c8o7xbdaS4KIhPukruxv7i4EdhX_is&usqp=CAU" />
                 </AvatarGroup>
                 <div    className = {classes.dueDate}>
-                <Button variant   = "text" size = 'small' className = {classes.disabled}>
+                <Button variant   = "text" size = 'small'>
                         <b>{"DUE DATE: " + dueDate}</b>
                 </Button>
                 </div>

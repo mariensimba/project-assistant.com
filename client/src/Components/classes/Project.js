@@ -5,30 +5,11 @@ const palette = new Palette()
 
 /* Style subcomponent of Card */
 const useStyles = makeStyles({
-    disabled: {
-        pointerEvents: 'none',
-    },
     buttonGroup: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        "& #stateButton": {
-            color: palette.LightGreen.color,
-            background: palette.LightGreen.addAlpha(0.3), 
-            padding: '5px 10px'
-        },
-        "& #priorityButton": {
-            color: palette.Orange.color,
-            background: 'transparent', 
-            borderColor: palette.Orange.color,
-            padding: '5px 10px'
-        },
-
         marginBottom: 12,
-        "& Button": {
-            maxHeight: '30px', 
-            fontSize: '12px'
-        }
     },
     projectName: {
         textAlign: 'left'
