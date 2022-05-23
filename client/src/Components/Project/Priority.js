@@ -1,5 +1,5 @@
 import React from 'react'
-import Palette from '../themes/Palette'
+import Palette from '../../themes/Palette'
 import Etiquette from './Etiquette'
 
  

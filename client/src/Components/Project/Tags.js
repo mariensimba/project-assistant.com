@@ -1,7 +1,7 @@
 import React from 'react'
 import Etiquette from './Etiquette'
-import Global from '../Global'
-import Palette from '../themes/Palette'
+import Global from '../../Global'
+import Palette from '../../themes/Palette'
 
 const palette = new Palette()
 const global = new Global()

@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardHeader } from '@mui/material'
-import Palette from '../themes/Palette'
+import Palette from '../../themes/Palette'
 import { Box } from '@mui/material'
 import { CardActions } from '@mui/material'
 import { IconButton } from '@mui/material'

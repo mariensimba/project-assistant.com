@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 
 
 
-export default function Etiquette({variant = 'text', color, bgcolor = 'transparent', size = 'small', value, fontStyle = null}) {
+export default function Etiquette({variant = 'text', color, bgcolor = 'transparent', size = 'small', value, fontStyle = null, sx = {}}) {
     
     const style = {
         padding: '5px 10px',
@@ -28,7 +28,7 @@ export default function Etiquette({variant = 'text', color, bgcolor = 'transpare
     }
     
     return (
-        <Button variant = {variant} size = {size} style={style}>
+        <Button variant = {variant} size = {size} style={style} sx = {sx}>
             {getFontStyle()}
         </Button>
      )
