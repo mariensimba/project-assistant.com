@@ -1,29 +1,10 @@
 import { makeStyles } from '@mui/styles';
-import Palette from '../../style/Palette';
+import Palette from '../../themes/Palette';
 
 const palette = new Palette()
 
 /* Style subcomponent of Card */
 const useStyles = makeStyles({
-    buttonGroup: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginBottom: 12,
-    },
-    projectName: {
-        textAlign: 'left'
-    },
-    numTaskInfo: {
-        textAlign: 'left',
-        "& #taskDoneText": {
-            marginBottom: 12 
-        },
-    },
-    IconButton: {
-        maxHeight: '30px',
-        maxWidth: '30px',
-    },
     tags: {
         display: 'flex',
         alignItems: 'center',
@@ -33,14 +14,6 @@ const useStyles = makeStyles({
             fontSize: '12px',
             padding: '5px 10px',
             margin: '0 5px'
-        },
-        "& #tagButton1": {
-            color: palette.LightSkyBlue.color,
-            background: palette.LightSkyBlue.addAlpha(0.3)
-        },
-        "& #tagButton2": {
-            color: palette.Red.color,
-            background: palette.Red.addAlpha(0.3)
         },
     },
     dueDate: {

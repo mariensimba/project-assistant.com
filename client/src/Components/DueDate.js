@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import Palette from '../style/Palette'
+import Palette from '../themes/Palette'
 
 const palette = new Palette()
 export default function DueDate({ date }) {

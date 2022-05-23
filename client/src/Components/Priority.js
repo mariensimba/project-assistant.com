@@ -1,6 +1,6 @@
 import React from 'react'
-import Palette from '../style/Palette'
-import Etiquette from '../style/Etiquette'
+import Palette from '../themes/Palette'
+import Etiquette from './Etiquette'
 
  
 const palette = new Palette()

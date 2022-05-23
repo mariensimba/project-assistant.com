@@ -1,9 +1,9 @@
 import React from "react"
-import Palette from "../style/Palette"
+import Palette from "../themes/Palette"
 
 const palette = new Palette()
 
-function ProgressBar({ bgcolor, progress, height }) {
+export default function ProgressBar({ bgcolor, progress, height }) {
 
     const bar = {
         marginBottom: '30px'
@@ -33,4 +33,3 @@ function ProgressBar({ bgcolor, progress, height }) {
     )
 }
 
-export default ProgressBar

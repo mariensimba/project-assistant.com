@@ -14,7 +14,7 @@ class Green extends Color {
 
 class DarkGreen extends Color {
     constructor() {
-        super(427, 94, 32)
+        super(27, 94, 32)
     }
 }
 
@@ -110,24 +110,6 @@ class HotPink extends Color {
 class DarkHotPink extends Color {
     constructor() {
         super(255, 25, 140)
-    }
-}
-
-class LightYellow extends Color {
-    constructor() {
-        super(255, 255, 102)
-    }
-}
-
-class Yellow extends Color {
-    constructor() {
-        super(255, 255, 0)
-    }
-}
-
-class DarkYellow extends Color {
-    constructor() {
-        super(153, 153, 0)
     }
 }
 
@@ -228,18 +210,6 @@ export default class Palette {
     get DarkHotPink() {
         return new DarkHotPink()
     }
-
-    get LightYellow()  {
-        return new LightYellow()
-    }
-    
-    get Yellow()  {
-        return new Yellow()
-    }
-
-    get DarkYellow()  {
-        return new DarkYellow()
-    }    
 
     get LightRed() {
         return new LightRed()
